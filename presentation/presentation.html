@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vibration API</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Vibration API
+
+Jerry Träskelin
+
+---
+
+# Agenda
+
+1. What is Vibration API?
+2. What can you do with it?
+3. Limitations
+4. Browser support
+5. Examples
+6. Use cases
+7. Security considerations
+8. Links and references
+
+---
+
+# What is Vibration API?
+
+* a small and simple API for vibrating the user's phone
+
+* Second edition, W3C recommendation 18 October 2016
+
+---
+
+# What can you do with it?
+
+* Well, you can vibrate the phone. That's it.
+
+* You can vibrate once or specify a pattern
+
+* You can determine the length of the vibrations
+
+* You can cancel existing vibrations
+
+---
+
+# Limitations
+
+* Sadly but understandably, the vibrations only work if the user is <b>on the page</b>
+
+* This means that if the user has their screen locked, is checking on some other app
+ or even browsing on a different tab on their browser, the vibration will fail
+
+* Wake Lock API could be helpful, but that raises the concern for battery life
+
+---
+
+class: center, middle
+
+# Browser support
+
+---
+
+![](img/browsersupport01.png)
+![](img/browsersupport02.png)
+<br>
+https://whatwebcando.today/vibration.html
+
+---
+
+# Browser support
+
+* For some reason Chrome 64.0.3282.137 on my phone does not work with this
+
+* Same Chrome version on the same phone model works for my friend though
+
+* Firefox seems to work fine for me, which is all that really matters
+
+---
+
+# Examples
+
+* Please check the examples <a href="../demonstration/demonstration.html">here</a>
+
+* Short URL: http://bit.ly/2FPDuo5
+
+* QR code with a link (just trust me!)
+
+ ![](img/qrcode.png)
+
+---
+
+# Use cases
+
+* I originally wanted to use this as an alert mechanism for my mash-up project
+
+* The "stay on page" requirement kind of ruined that one, but it's still a possible use case
+
+* Games are one use case for the Vibration API
+
+---
+
+# Security considerations
+
+* The API makes the browser ask for permission upon the first vibration (be aware of this if your vibrations are event or time based)
+
+* The Vibration API provides an indirect privacy risk
+
+* Sensors such as accelometers and gyroscopes have an unique "fingerprint" due to small imperfections during the manufacturing
+
+* The Vibration API could be utilized together with other APIs to get these unique fingerprints
+
+* Also, a vibrating device might provide the means to physically identify users
+
+---
+
+# Links and references
+
+* https://www.w3.org/TR/vibration/
+
+* https://whatwebcando.today/vibration.html
+
+* <a href="../demonstration/demonstration.html">Demonstration</a>
+
+* https://github.com/Jerrytr/homeAssignment6
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
